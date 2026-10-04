@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'IRANSans';
+  src: url('../../fonts/IRANSansXFaNum-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF,
+    U+FB50-FDFF, U+FE70-FEFE,
+    U+200C-200F, U+061C,
+    U+0660-0669, U+06F0-06F9;
+}
+
+/* 500 */
+@font-face {
+  font-family: 'IRANSans';
+  src: url('../../fonts/IRANSansXFaNum-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF,
+    U+FB50-FDFF, U+FE70-FEFE,
+    U+200C-200F, U+061C,
+    U+0660-0669, U+06F0-06F9;
+}
+
+/* 700 */
+@font-face {
+  font-family: 'IRANSans';
+  src: url('../../fonts/IRANSansXFaNum-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF,
+    U+FB50-FDFF, U+FE70-FEFE,
+    U+200C-200F, U+061C,
+    U+0660-0669, U+06F0-06F9;
+}
+
+/* Latin + Cyrillic – InterCustom */
+/* 300 Latin */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+1E00-1EFF;
+}
+
+/* 300 Cyrillic */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-cyrillic-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* 400 Latin */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+1E00-1EFF;
+}
+
+/* 400 Cyrillic */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-cyrillic-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* 500 Latin */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+1E00-1EFF;
+}
+
+/* 500 Cyrillic */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-cyrillic-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* 700 Latin */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0100-024F, U+1E00-1EFF;
+}
+
+/* 700 Cyrillic */
+@font-face {
+  font-family: 'InterCustom';
+  src: url('../../fonts/inter-v20-cyrillic-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
+}

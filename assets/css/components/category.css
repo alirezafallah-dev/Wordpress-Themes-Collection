@@ -1,0 +1,197 @@
+/* =========================================================
+   CATEGORY / ARCHIVE PAGE
+   ========================================================= */
+
+.category-page .container {
+  padding-block: 40px;
+  display: grid;
+  gap: var(--space-6);
+}
+
+.category-page .container .category-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-wrapper .post-section {
+  flex: 0 0 67%;
+}
+
+.sidebar {
+  flex: 0 0 30%;
+}
+
+/* ──────────────────────────────────────────
+   Archive Page
+   ────────────────────────────────────────── */
+.archive-page {
+  padding: 60px 0;
+  background: var(--color-background);
+}
+
+.archive-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.archive-sidebar {
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-box {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar-box h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+#search-input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 14px;
+}
+
+.archive-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archive-categories li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.archive-categories li:last-child {
+  border-bottom: 0;
+}
+
+.archive-categories li.active {
+  color: #0a66c2;
+  font-weight: 700;
+}
+
+.archive-categories .count {
+  background: #f1f1f1;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 12px;
+}
+
+/* ──────────────────────────────────────────
+   Archive Toolbar
+   ────────────────────────────────────────── */
+.archive-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+#archive-sort {
+  height: 42px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: var(--color-background);
+}
+
+#archive-sort option {
+  background: var(--color-background);
+}
+
+/* ──────────────────────────────────────────
+   Posts Grid
+   ────────────────────────────────────────── */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.posts-grid .tm-rd-3 {
+  background: var(--color-background) !important;
+}
+
+.posts-grid .tm-rd-3::before,
+.posts-grid .tm-rd-3::after {
+  box-shadow: 20px 20px var(--color-background) !important;
+}
+
+.post-meta-top,
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #777;
+}
+
+.post-category {
+  background: var(--color-accent);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.post-title {
+  font-size: 20px;
+  margin: 14px 0;
+}
+
+.post-title a {
+  text-decoration: none;
+  color: #222;
+}
+
+.post-excerpt {
+  color: #666;
+  line-height: 1.9;
+}
+
+/* ──────────────────────────────────────────
+   Pagination
+   ────────────────────────────────────────── */
+.archive-pagination {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.archive-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin: 0 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+.archive-pagination .current {
+  background: #0a66c2;
+  color: #fff;
+  border-color: #0a66c2;
+}

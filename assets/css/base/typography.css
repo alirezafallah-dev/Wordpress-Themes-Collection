@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+
+    font-family: 'IRANSans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+    font-weight: 400;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+/* language fonts */
+:lang(fa), :lang(ar) {
+    font-family: 'IRANSans', system-ui;
+}
+
+:lang(en) {
+    font-family: 'InterCustom', system-ui;
+}
+
+:lang(fa),
+:lang(ar),
+:lang(en) {
+    font-synthesis-weight: none;
+    font-synthesis-style: none;
+}
+
+/* numbers */
+.num-latin {
+    font-family: 'InterCustom', 'IRANSans';
+    direction: ltr;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.h1 { font-size: 1.875rem; }
+.h2 { font-size: 1.25rem; }
+.small { font-size: 0.9375rem; }
+
+.text p {
+    font-size: 0.925rem;
+    font-weight: 300;
+}
+
+/* =========================
+   RTL SUPPORT (Persian)
+========================= */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.ltr {
+    direction: ltr;
+    text-align: left;
+}

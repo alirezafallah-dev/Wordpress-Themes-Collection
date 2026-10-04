@@ -1,0 +1,219 @@
+/* =========================================
+   HEADER MENU
+========================================= */
+
+.nav-header-menu .nav-menu > li {
+  position: relative;
+}
+
+/* =========================================
+   MAIN MENU - HAS CHILDREN
+========================================= */
+
+.nav-header-menu .nav-menu > li.menu-item-has-children > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Arrow */
+.nav-header-menu .nav-menu > li.menu-item-has-children > a::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  transition: transform 0.25s ease;
+}
+
+/* Arrow hover */
+.nav-header-menu .nav-menu > li.menu-item-has-children:hover > a::after {
+  transform: rotate(225deg);
+  margin-top: 3px;
+}
+
+/* =========================================
+   SUBMENU
+========================================= */
+
+.nav-header-menu .nav-menu > li > .sub-menu {
+  position: absolute;
+  top: 100%;
+  right: -20px;
+  min-width: 240px;
+  margin: 0;
+  padding: 12px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid rgba(164, 131, 78, 0.14);
+  border-radius: 14px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+  z-index: 9999;
+}
+
+.nav-header-menu .nav-menu > li.menu-item-has-children::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: -20px;
+  width: calc(100% + 40px);
+  height: 18px;
+  background: transparent;
+}
+
+/* =========================================
+   SHOW SUBMENU
+========================================= */
+
+.nav-header-menu .nav-menu > li.menu-item-has-children:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* =========================================
+   SUBMENU ITEM
+========================================= */
+
+.nav-header-menu .nav-menu .sub-menu li {
+  position: relative;
+  width: 100%;
+}
+
+.nav-header-menu .nav-menu .sub-menu li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 9px;
+  color: #383838;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================================
+   GOLD INDICATOR
+========================================= */
+
+.nav-header-menu .nav-menu .sub-menu li a::before {
+  content: "";
+  width: 3px;
+  height: 16px;
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  transform-origin: center;
+  border-radius: 10px;
+  background: #a4834e;
+  transition: transform 0.2s ease;
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.nav-header-menu .nav-menu .sub-menu li:hover > a {
+  color: #a4834e;
+  background: rgba(164, 131, 78, 0.07);
+  transform: translateX(-2px);
+}
+
+.nav-header-menu .nav-menu .sub-menu li:hover > a::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* =========================================
+   ACTIVE ITEM
+========================================= */
+
+.nav-header-menu .nav-menu .sub-menu li.current-menu-item > a,
+.nav-header-menu .nav-menu .sub-menu li.current-menu-ancestor > a {
+  color: #a4834e;
+  background: rgba(164, 131, 78, 0.07);
+}
+
+/* =========================================
+   NESTED SUBMENU
+========================================= */
+
+.nav-header-menu .nav-menu .sub-menu .sub-menu {
+  position: absolute;
+  top: -12px;
+  right: calc(100% + 10px);
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+.nav-header-menu .nav-menu .sub-menu li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* =========================================
+   NESTED ARROW
+========================================= */
+.nav-header-menu .nav-menu .sub-menu li.menu-item-has-children > a::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: auto;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(135deg);
+}
+
+/* =========================================
+   LTR
+========================================= */
+html[dir="ltr"] .nav-header-menu .nav-menu > li > .sub-menu {
+  left: -20px;
+  right: auto;
+}
+html[dir="ltr"] .nav-header-menu .nav-menu .sub-menu .sub-menu {
+  left: calc(100% + 10px);
+  right: auto;
+}
+html[dir="ltr"] .nav-header-menu .nav-menu .sub-menu li:hover > a {
+  transform: translateX(2px);
+}
+html[dir="ltr"] .nav-header-menu .nav-menu .sub-menu li a::before {
+  left: 7px;
+  right: auto;
+}
+html[dir="ltr"]
+  .nav-header-menu
+  .nav-menu
+  .sub-menu
+  li.menu-item-has-children
+  > a::after {
+  transform: rotate(-45deg);
+  margin-left: auto;
+  margin-right: 0;
+}

@@ -1,0 +1,844 @@
+/* ============================================================
+   🎨 CONSULTATION BOOKING PAGE
+   ============================================================
+   هماهنگ با Design System اصلی سایت
+   متغیرها از: variables.css, admin.css
+   فونت‌ها از: fonts.css (IRANSans + InterCustom)
+   فاصله‌ها از: spacing.css (--space-*)
+   ============================================================ */
+
+/* ──────────────────────────────────────────
+   0. Design Tokens محلی (با override هوشمند)
+   ────────────────────────────────────────── */
+.booking-app {
+  /* رنگ‌های اصلی — هم‌خوان با سایت */
+  --bk-primary: var(--color-text-main, #1f3a5f);
+  --bk-accent: var(--color-primary, #a4834e);
+  --bk-accent-hover: #94723f;
+  --bk-secondary: var(--color-secondary, #2c5a8a);
+  --bk-bg: var(--color-background, #faf8f4);
+  --bk-surface: #ffffff;
+  --bk-surface-alt: var(--color-box, #f4f0ea);
+  --bk-border: #e8e2d8;
+  --bk-border-light: #f0ece4;
+  --bk-text-main: var(--color-text-main, #1f3a5f);
+  --bk-text-muted: var(--color-text-2, #6b7280);
+  --bk-text-light: #9ca3af;
+
+  /* رنگ‌های معنایی */
+  --bk-online: #10b981;
+  --bk-online-bg: #ecfdf5;
+  --bk-online-border: #a7f3d0;
+  --bk-offline: var(--color-primary, #a4834e);
+  --bk-offline-bg: #faf4e8;
+  --bk-offline-border: #e8d4a8;
+  --bk-danger: #dc2626;
+  --bk-success: #16a34a;
+
+  /* فونت — هم‌خوان با typography.css */
+  --bk-font-fa: "IRANSans", system-ui, -apple-system, sans-serif;
+  --bk-font-en: "InterCustom", system-ui, sans-serif;
+
+  /* سایز فونت — هم‌خوان با variables.css */
+  --bk-fs-xs: var(--font-size-b3, 12px);
+  --bk-fs-sm: var(--font-size-b2, 14px);
+  --bk-fs-base: var(--font-size-b1, 16px);
+  --bk-fs-md: var(--font-size-h4, 18px);
+  --bk-fs-lg: var(--font-size-h3, 20px);
+  --bk-fs-xl: var(--font-size-h2, 24px);
+
+  /* وزن فونت — هم‌خوان با typography.css */
+  --bk-fw-light: var(--font-light, 300);
+  --bk-fw-regular: var(--font-regular, 400);
+  --bk-fw-medium: var(--font-medium, 500);
+  --bk-fw-semibold: var(--font-semibold, 600);
+  --bk-fw-bold: var(--font-bold, 700);
+
+  /* فاصله‌ها — هم‌خوان با spacing.css */
+  --bk-space-1: var(--space-1, 4px);
+  --bk-space-2: var(--space-2, 8px);
+  --bk-space-3: var(--space-3, 12px);
+  --bk-space-4: var(--space-4, 16px);
+  --bk-space-5: var(--space-5, 24px);
+  --bk-space-6: var(--space-6, 32px);
+  --bk-space-8: var(--space-8, 48px);
+  --bk-space-10: var(--space-10, 80px);
+
+  /* شعاع‌ها — هم‌خوان با variables.css */
+  --bk-radius-sm: var(--radius-sm, 6px);
+  --bk-radius-md: var(--radius-md, 10px);
+  --bk-radius-lg: var(--radius-lg, 14px);
+  --bk-radius-xl: var(--radius-xl, 24px);
+  --bk-radius-full: var(--radius-full, 999px);
+
+  /* سایه‌ها — هم‌خوان با admin.css */
+  --bk-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --bk-shadow-md: 0 6px 18px rgba(17, 24, 39, 0.08);
+  --bk-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  /* انیمیشن */
+  --bk-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --bk-duration: 0.25s;
+
+  /* تنظیمات پایه */
+  font-family: var(--bk-font-fa);
+  direction: rtl;
+  color: var(--bk-text-main);
+  line-height: var(--line-height-base, 1.7);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* فونت انگلیسی برای اعداد و متن لاتین */
+.booking-app :lang(en),
+.booking-app .num-latin {
+  font-family: var(--bk-font-en);
+}
+
+/* ──────────────────────────────────────────
+   1. Layout اصلی — هم‌خوان با container.css
+   ────────────────────────────────────────── */
+.booking-app {
+  background: var(--bk-bg);
+  padding-block: var(--bk-space-6);
+  min-height: 100vh;
+}
+
+.booking-app .container.flex {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: var(--bk-space-6);
+  margin-inline: auto;
+  padding-inline: var(--bk-space-4);
+  align-items: start;
+}
+
+/* ──────────────────────────────────────────
+   2. Sidebar — انتخاب نوع مشاوره
+   ────────────────────────────────────────── */
+.booking-sidebar {
+  position: sticky;
+  top: var(--bk-space-6);
+  background: var(--bk-surface);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-lg);
+  padding: var(--bk-space-5);
+  box-shadow: var(--bk-shadow-sm);
+  transition: box-shadow var(--bk-duration) var(--bk-ease);
+}
+
+.booking-sidebar:hover {
+  box-shadow: var(--bk-shadow-md);
+}
+
+.sidebar-header {
+  margin-bottom: var(--bk-space-5);
+  padding-bottom: var(--bk-space-4);
+  border-bottom: 1px solid var(--bk-border-light);
+}
+
+.sidebar-header h3 {
+  margin: 0 0 var(--bk-space-1);
+  font-size: var(--bk-fs-lg);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-primary);
+  letter-spacing: -0.01em;
+}
+
+.sidebar-subtitle {
+  font-size: var(--bk-fs-sm);
+  color: var(--bk-text-muted);
+  font-weight: var(--bk-fw-regular);
+}
+
+/* ── گروه‌بندی مشاوره‌ها ── */
+.consultation-group {
+  margin-bottom: var(--bk-space-4);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-md);
+  overflow: hidden;
+  background: var(--bk-surface);
+  transition: border-color var(--bk-duration) var(--bk-ease);
+}
+
+.consultation-group:hover {
+  border-color: #d7d0c3;
+}
+
+.consultation-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--bk-space-3);
+  padding: var(--bk-space-3) var(--bk-space-4);
+  border-bottom: 1px solid var(--bk-border-light);
+}
+
+.group-header.online {
+  background: linear-gradient(135deg, var(--bk-online-bg), #f0fdf9);
+  border-right: 3px solid var(--bk-online);
+}
+
+.group-header.offline {
+  background: linear-gradient(135deg, var(--bk-offline-bg), #fdf8ed);
+  border-right: 3px solid var(--bk-offline);
+}
+
+.group-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.group-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.group-info strong {
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-primary);
+}
+
+.group-info small {
+  font-size: var(--bk-fs-xs);
+  color: var(--bk-text-muted);
+}
+
+/* ── لیست آیتم‌های مشاوره ── */
+.consultation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.consultation-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: var(--bk-space-3);
+  padding: var(--bk-space-3) var(--bk-space-4);
+  cursor: pointer;
+  border-bottom: 1px solid var(--bk-border-light);
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    border-color var(--bk-duration) var(--bk-ease),
+    transform 0.15s var(--bk-ease);
+  position: relative;
+}
+
+.consultation-item:last-child {
+  border-bottom: none;
+}
+
+.consultation-item::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 3px;
+  height: 60%;
+  background: var(--bk-accent);
+  border-radius: 0 3px 3px 0;
+  transition: transform var(--bk-duration) var(--bk-ease);
+}
+
+.consultation-item:hover {
+  background: var(--bk-surface-alt);
+}
+
+.consultation-item:active {
+  transform: scale(0.995);
+}
+
+.consultation-item.active {
+  background: #faf4e8;
+}
+
+.consultation-item.active::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.item-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--bk-radius-md);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: transform var(--bk-duration) var(--bk-ease);
+}
+
+.consultation-item:hover .item-badge {
+  transform: scale(1.08);
+}
+
+.item-badge.online {
+  background: var(--bk-online-bg);
+  border: 1px solid var(--bk-online-border);
+}
+
+.item-badge.offline {
+  background: var(--bk-offline-bg);
+  border: 1px solid var(--bk-offline-border);
+}
+
+.item-info {
+  min-width: 0;
+}
+
+.item-info strong {
+  display: block;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-semibold);
+  color: var(--bk-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.item-info span {
+  font-size: var(--bk-fs-xs);
+  color: var(--bk-text-muted);
+  font-weight: var(--bk-fw-regular);
+}
+
+.item-price {
+  text-align: left;
+  white-space: nowrap;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-accent-hover);
+  letter-spacing: -0.02em;
+}
+
+.item-price small {
+  display: block;
+  font-size: var(--bk-fs-xs);
+  font-weight: var(--bk-fw-regular);
+  color: var(--bk-text-light);
+  margin-top: 1px;
+}
+
+/* ── Sidebar Footer Info ── */
+.sidebar-footer-info {
+  margin-top: var(--bk-space-5);
+  padding-top: var(--bk-space-4);
+  border-top: 1px solid var(--bk-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--bk-space-2);
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: var(--bk-space-3);
+  padding: var(--bk-space-3);
+  background: var(--bk-surface-alt);
+  border-radius: var(--bk-radius-sm);
+  transition: background var(--bk-duration) var(--bk-ease);
+}
+
+.info-box:hover {
+  background: var(--bk-bg);
+}
+
+.info-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.info-text strong {
+  display: block;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-semibold);
+  color: var(--bk-primary);
+  line-height: 1.3;
+}
+
+.info-text small {
+  font-size: var(--bk-fs-xs);
+  color: var(--bk-text-muted);
+}
+
+.empty-sidebar-state {
+  padding: var(--bk-space-8) var(--bk-space-4);
+  text-align: center;
+  color: var(--bk-text-muted);
+  font-size: var(--bk-fs-sm);
+}
+
+/* ──────────────────────────────────────────
+   3. Main Area — تقویم و ساعات
+   ────────────────────────────────────────── */
+.booking-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bk-space-5);
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--bk-space-4);
+  background: var(--bk-surface);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-lg);
+  padding: var(--bk-space-4) var(--bk-space-5);
+  box-shadow: var(--bk-shadow-sm);
+}
+
+.main-header h2 {
+  margin: 0;
+  font-size: var(--bk-fs-xl);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-primary);
+  letter-spacing: -0.02em;
+}
+
+/* ── Calendar Switcher ── */
+.calendar-switcher {
+  display: inline-flex;
+  background: var(--bk-surface-alt);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.calendar-switcher button {
+  padding: var(--bk-space-2) var(--bk-space-4);
+  border: none;
+  border-radius: var(--bk-radius-full);
+  background: transparent;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-medium);
+  color: var(--bk-text-muted);
+  cursor: pointer;
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    color var(--bk-duration) var(--bk-ease),
+    box-shadow var(--bk-duration) var(--bk-ease);
+  font-family: inherit;
+}
+
+.calendar-switcher button:hover {
+  color: var(--bk-primary);
+}
+
+.calendar-switcher button.active {
+  background: var(--bk-surface);
+  color: var(--bk-accent-hover);
+  font-weight: var(--bk-fw-semibold);
+  box-shadow: var(--bk-shadow-sm);
+}
+
+/* ── Main Content Grid ── */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--bk-space-5);
+}
+
+/* ──────────────────────────────────────────
+   4. Calendar Section
+   ────────────────────────────────────────── */
+.calendar-section {
+  background: var(--bk-surface);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-lg);
+  padding: var(--bk-space-5);
+  box-shadow: var(--bk-shadow-sm);
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--bk-space-4);
+}
+
+.calendar-nav button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-sm);
+  background: var(--bk-surface);
+  font-size: var(--bk-fs-lg);
+  color: var(--bk-text-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    border-color var(--bk-duration) var(--bk-ease),
+    color var(--bk-duration) var(--bk-ease),
+    transform 0.15s var(--bk-ease);
+  font-family: inherit;
+}
+
+.calendar-nav button:hover {
+  background: var(--bk-surface-alt);
+  border-color: var(--bk-accent);
+  color: var(--bk-accent-hover);
+}
+
+.calendar-nav button:active {
+  transform: scale(0.92);
+}
+
+#calTitle {
+  font-size: var(--bk-fs-md);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-primary);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: var(--bk-space-2);
+  text-align: center;
+}
+
+.calendar-weekdays span {
+  font-size: var(--bk-fs-xs);
+  font-weight: var(--bk-fw-semibold);
+  color: var(--bk-text-muted);
+  padding: var(--bk-space-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: var(--bk-radius-sm);
+  background: transparent;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-medium);
+  color: var(--bk-primary);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    color var(--bk-duration) var(--bk-ease),
+    transform 0.15s var(--bk-ease),
+    box-shadow var(--bk-duration) var(--bk-ease);
+  font-family: inherit;
+  position: relative;
+}
+
+.calendar-day:hover:not(.disabled):not(.selected) {
+  background: var(--bk-surface-alt);
+}
+
+.calendar-day:active:not(.disabled) {
+  transform: scale(0.9);
+}
+
+.calendar-day.selected {
+  background: var(--bk-accent);
+  color: #fff;
+  font-weight: var(--bk-fw-bold);
+  box-shadow: 0 2px 8px rgba(164, 131, 78, 0.3);
+}
+
+.calendar-day.disabled {
+  color: #d4d0c8;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.calendar-day.today:not(.selected) {
+  border: 1.5px solid var(--bk-accent);
+  color: var(--bk-accent-hover);
+  font-weight: var(--bk-fw-bold);
+}
+
+/* ──────────────────────────────────────────
+   5. Time Slots Section
+   ────────────────────────────────────────── */
+.time-section {
+  background: var(--bk-surface);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-lg);
+  padding: var(--bk-space-5);
+  box-shadow: var(--bk-shadow-sm);
+}
+
+.time-section h4 {
+  margin: 0 0 var(--bk-space-4);
+  font-size: var(--bk-fs-md);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-primary);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--bk-space-2);
+  max-height: 340px;
+  overflow-y: auto;
+  padding-left: var(--bk-space-2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--bk-border) transparent;
+}
+
+.time-slots::-webkit-scrollbar {
+  width: 4px;
+}
+
+.time-slots::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.time-slots::-webkit-scrollbar-thumb {
+  background: var(--bk-border);
+  border-radius: var(--bk-radius-full);
+}
+
+.time-btn {
+  padding: var(--bk-space-3) var(--bk-space-2);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-sm);
+  background: var(--bk-surface);
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-medium);
+  color: var(--bk-primary);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    border-color var(--bk-duration) var(--bk-ease),
+    color var(--bk-duration) var(--bk-ease),
+    transform 0.15s var(--bk-ease),
+    box-shadow var(--bk-duration) var(--bk-ease);
+  font-family: inherit;
+  direction: ltr;
+}
+
+.time-btn:hover:not(.booked):not(.selected) {
+  border-color: var(--bk-accent);
+  background: var(--bk-offline-bg);
+  color: var(--bk-accent-hover);
+}
+
+.time-btn:active:not(.booked) {
+  transform: scale(0.96);
+}
+
+.time-btn.selected {
+  background: var(--bk-accent);
+  border-color: var(--bk-accent);
+  color: #fff;
+  font-weight: var(--bk-fw-bold);
+  box-shadow: 0 2px 8px rgba(164, 131, 78, 0.3);
+}
+
+.time-btn.booked {
+  background: var(--bk-surface-alt);
+  color: #c4c0b8;
+  border-color: var(--bk-border-light);
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.time-slots .empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--bk-space-8) var(--bk-space-4);
+  color: var(--bk-text-muted);
+  font-size: var(--bk-fs-sm);
+  margin: 0;
+}
+
+/* ──────────────────────────────────────────
+   6. Footer — خلاصه و دکمه تأیید
+   ────────────────────────────────────────── */
+.main-footer {
+  background: var(--bk-surface);
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-lg);
+  padding: var(--bk-space-5);
+  box-shadow: var(--bk-shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bk-space-6);
+  flex-wrap: wrap;
+}
+
+.summary-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--bk-space-4) var(--bk-space-8);
+  flex: 1;
+  min-width: 0;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summary-item span {
+  font-size: var(--bk-fs-xs);
+  color: var(--bk-text-muted);
+  font-weight: var(--bk-fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.summary-item strong {
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-semibold);
+  color: var(--bk-primary);
+}
+
+.summary-item.total strong {
+  font-size: var(--bk-fs-lg);
+  font-weight: var(--bk-fw-bold);
+  color: var(--bk-accent-hover);
+}
+
+.summary-item.type-row {
+  padding-bottom: var(--bk-space-3);
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.summary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--bk-space-1);
+  padding: 3px 10px;
+  border-radius: var(--bk-radius-full);
+  font-size: var(--bk-fs-xs);
+  font-weight: var(--bk-fw-semibold);
+}
+
+.summary-badge.online {
+  background: var(--bk-online-bg);
+  color: #065f46;
+  border: 1px solid var(--bk-online-border);
+}
+
+.summary-badge.offline {
+  background: var(--bk-offline-bg);
+  color: #7c5a1f;
+  border: 1px solid var(--bk-offline-border);
+}
+
+.btn-confirm {
+  padding: var(--bk-space-3) var(--bk-space-8);
+  border: none;
+  border-radius: var(--bk-radius-full);
+  background: var(--bk-accent);
+  color: #fff;
+  font-size: var(--bk-fs-sm);
+  font-weight: var(--bk-fw-bold);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--bk-duration) var(--bk-ease),
+    transform 0.15s var(--bk-ease),
+    box-shadow var(--bk-duration) var(--bk-ease),
+    opacity var(--bk-duration) var(--bk-ease);
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
+
+.btn-confirm:hover:not(:disabled) {
+  background: var(--bk-accent-hover);
+  box-shadow: 0 4px 16px rgba(164, 131, 78, 0.35);
+}
+
+.btn-confirm:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-confirm:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-confirm:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(164, 131, 78, 0.25);
+}
+
+/* ──────────────────────────────────────────
+   7. انیمیشن ورود (Entrance Animations)
+   ────────────────────────────────────────── */
+@keyframes bk-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-sidebar {
+  animation: bk-fadeUp 0.5s var(--bk-ease) both;
+}
+
+.booking-main {
+  animation: bk-fadeUp 0.5s var(--bk-ease) 0.1s both;
+}
+
+.consultation-item {
+  animation: bk-fadeUp 0.35s var(--bk-ease) both;
+}
+
+.consultation-item:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.consultation-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.consultation-item:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.consultation-item:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.consultation-item:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+/* ──────────────────────────────────────────
+   8. Focus & Accessibility
+   ────────────────────────────────────────── */
+.booking-app *:focus-visible {
+  outline: 2px solid var(--bk-accent);
+  outline-offset: 2px;
+}
+
+.consultation-item:focus-visible {
+  outline-offset: -2px;
+  border-radius: var(--bk-radius-sm);
+}

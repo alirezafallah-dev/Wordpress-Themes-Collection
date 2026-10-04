@@ -1,0 +1,2020 @@
+/* =========================================================
+   RESPONSIVE STYLES
+   Centralized Media Queries for Tablet & Mobile
+   =========================================================
+   Breakpoints:
+   - 1200px: Large tablets
+   - 992px: Tablets
+   - 768px: Small tablets / Large phones
+   - 700px: Mobile phones
+   - 576px: Small mobile phones
+   - 420px: Extra small mobile
+   ========================================================= */
+
+/* =========================================================
+   MOBILE NAVIGATION (Base - Hidden on Desktop)
+   ========================================================= */
+.mobile-bottom-nav,
+.mobile-menu-overlay,
+.mobile-menu-drawer {
+  display: none;
+}
+
+@media (min-width: 701px) {
+  .lang-switcher-mobile {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   LARGE TABLET (max-width: 1200px)
+   ========================================================= */
+@media (max-width: 1200px) {
+  /* Booking Page */
+  .booking-app .container.flex {
+    grid-template-columns: 300px 1fr;
+    gap: var(--space-5);
+    max-width: 960px;
+  }
+
+  .service-items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+  .svc-item .svc-icon {
+    width: 70px;
+  }
+  .reserve-title-section img {
+    width: 150px;
+    height: 180px;
+  }
+  .article-card {
+    flex: 0 0 calc(32% - 12px);
+  }
+  .main-footer {
+    flex-direction: column;
+  }
+  .dashboard-wrapper {
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+  }
+  .data-table-wrapper {
+    max-width: 580px;
+  }
+}
+
+/* =========================================================
+   TABLET (max-width: 992px)
+   ========================================================= */
+@media (max-width: 992px) {
+  /* ── Booking Page ── */
+  .booking-app .container.flex {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+  .booking-sidebar {
+    position: static;
+  }
+  .booking-main .main-content {
+    grid-template-columns: 1fr;
+  }
+  .booking-main .time-slots {
+    max-height: 220px;
+  }
+  .booking-main .main-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .booking-main .summary-box {
+    justify-content: space-between;
+  }
+  .booking-main .btn-confirm {
+    width: 100%;
+    padding: var(--space-4);
+    text-align: center;
+  }
+
+  /* ── Category / Archive Page ── */
+  .archive-page {
+    padding: 20px 0 0;
+  }
+  .archive-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sidebar-box {
+    margin-bottom: 0;
+  }
+  .archive-sidebar {
+    position: static;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .article-title {
+    font-size: var(--font-size-b1);
+  }
+
+  /* ── Single Post Page ── */
+  .single-page .container {
+    padding-block: 20px;
+  }
+  .single-page .single-wrapper {
+    flex-direction: column;
+  }
+  .single-hero {
+    margin-bottom: 20px;
+  }
+  .single-wrapper .post-section {
+    flex: 100%;
+  }
+  .single-wrapper .sidebar {
+    flex: 0 0 100%;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  .single-title {
+    max-width: 100%;
+  }
+
+  .comments-header,
+  .no-comments {
+    margin-bottom: 20px;
+  }
+  .sidebar-heading h3 {
+  }
+  .sidebar-post-content h4 {
+    font-size: var(--font-size-b2);
+  }
+  /* ── Main Page - Services ── */
+  .service-items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .svc-item img {
+    width: 60px;
+  }
+
+  .svc-title {
+    font-size: var(--font-size-b2);
+  }
+
+  /* ── About Us Page ── */
+  .about-hero-grid,
+  .resume-layout,
+  .institute-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-hero-content {
+    order: 1;
+  }
+  .about-hero-image {
+    order: 2;
+    max-width: 600px;
+  }
+  .resume-summary {
+    padding: 30px 0;
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--about-line);
+  }
+  .resume-details {
+    padding-inline-start: 0;
+  }
+  .institute-image {
+    min-height: 400px;
+  }
+  .approach-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .process-head {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ── Contact Us Page ── */
+  .contact-hero {
+    padding: 80px 0 70px;
+  }
+  .contact-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-hero-label {
+    min-height: auto;
+  }
+  .contact-hero-number {
+    display: none;
+  }
+  .contact-hero-content {
+    padding-inline: 0;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+  .contact-location {
+    padding: 75px 0;
+  }
+  .contact-location-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-location-card {
+    grid-template-columns: 1fr;
+  }
+  .contact-map {
+    min-height: 330px;
+  }
+  .contact-address {
+    border-inline-start: 0;
+    border-top: 1px solid var(--color-line);
+  }
+  .contact-cta {
+    padding: 70px 0;
+  }
+  .contact-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  /* ── Terms / Legal Page ── */
+  .legal-hero {
+    padding: 75px 0 80px;
+  }
+  .legal-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .legal-hero-content {
+    padding-inline: 0;
+  }
+  .legal-content {
+    padding: 80px 0 90px;
+  }
+  .legal-content-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+  .legal-sidebar {
+    position: static;
+  }
+  .legal-sidebar-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .legal-sidebar-nav a {
+    padding: 13px 15px;
+    border-inline-end: 1px solid var(--color-line);
+  }
+  .legal-sidebar-nav a:nth-child(even) {
+    border-inline-end: 0;
+  }
+  html[dir="ltr"] .legal-section-body {
+    padding-inline-start: 0;
+    padding-inline-end: 95px;
+  }
+  .legal-cta {
+    padding: 75px 0;
+  }
+  .legal-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ── Account / Dashboard Page ── */
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .dashboard-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+  }
+  .sidebar-profile {
+    flex: 0 0 100%;
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .nav-item {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .nav-item.active::before {
+    display: none;
+  }
+  .sidebar-footer {
+    flex: 0 0 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  .dashboard-content {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .data-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .data-table {
+    min-width: 700px;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET / LARGE PHONE (max-width: 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  /* ── Booking Page ── */
+  .booking-app {
+    padding-block: var(--space-4);
+  }
+  .booking-app .container.flex {
+    gap: var(--space-4);
+    max-width: 540px;
+    padding-inline: var(--space-3);
+    padding-bottom: 90px;
+  }
+  .booking-sidebar {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+  .booking-sidebar .sidebar-header {
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+  }
+  .booking-sidebar .sidebar-header h3 {
+    font-size: var(--font-size-h4);
+  }
+  .consultation-group {
+    margin-bottom: var(--space-3);
+  }
+  .group-header {
+    padding: var(--space-2) var(--space-3);
+  }
+  .group-icon {
+    font-size: 1.25rem;
+  }
+  .consultation-item {
+    grid-template-columns: 40px 1fr auto;
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+  .item-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .item-info strong {
+    font-size: var(--font-size-b3);
+  }
+  .item-price {
+    font-size: var(--font-size-b3);
+  }
+  .main-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+  }
+  .main-header h2 {
+    font-size: var(--font-size-h5);
+    text-align: center;
+  }
+  .calendar-switcher {
+    justify-content: center;
+    width: 100%;
+  }
+  .calendar-switcher button {
+    flex: 1;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-b3);
+  }
+  .calendar-section {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+  }
+  .calendar-nav button {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-h4);
+  }
+  #calTitle {
+    font-size: var(--font-size-b2);
+  }
+  .calendar-day {
+    font-size: var(--font-size-b3);
+    border-radius: var(--radius-sm);
+  }
+  .time-section {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+  }
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 200px;
+    gap: var(--space-1);
+  }
+  .time-btn {
+    padding: var(--space-2) var(--space-1);
+    font-size: var(--font-size-b3);
+    border-radius: var(--radius-sm);
+  }
+  .main-footer {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    gap: var(--space-4);
+  }
+  .summary-box {
+    gap: var(--space-3) var(--space-4);
+  }
+  .summary-item span {
+    font-size: 11px;
+  }
+  .summary-item strong {
+    font-size: var(--font-size-b3);
+  }
+  .summary-item.total strong {
+    font-size: var(--font-size-h4);
+  }
+  .btn-confirm {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-b2);
+    border-radius: var(--radius-md);
+  }
+  .site-footer {
+    margin-bottom: 1.75rem;
+  }
+  .sidebar-footer-info {
+    flex-direction: row;
+    gap: var(--space-2);
+  }
+  .info-box {
+    flex: 1;
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+  .info-icon {
+    font-size: 1rem;
+  }
+  .info-text strong {
+    font-size: var(--font-size-b3);
+  }
+  .info-text small {
+    display: none;
+  }
+
+  /* ── Header (Mobile) ── */
+  .site-header .container .header-inner .header-buttons,
+  .site-header .container .header-menu {
+    display: none;
+  }
+  .lang-switcher-mobile {
+    margin: 0 !important;
+    position: relative;
+    display: flex;
+    height: auto;
+    width: auto;
+    background: none;
+    border-radius: unset;
+    align-content: center;
+    align-items: center;
+    justify-content: end;
+  }
+  .lang-active {
+    border: none;
+  }
+  .lang-arrow {
+    display: none;
+  }
+  .lang-active-mobile img {
+    border-radius: 4px;
+    width: 34px;
+    height: 22px;
+  }
+  .lang-item img {
+    width: 28px !important;
+    height: 18px !important;
+  }
+  .header-logo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .logo-title {
+    text-align: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  .logo-title strong {
+    font-size: var(--font-size-b1);
+  }
+  .logo-title span {
+    font-size: var(--font-size-b3);
+  }
+}
+
+/* =========================================================
+   MOBILE (max-width: 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  /* ── Main Page ── */
+  .site-main .container {
+    padding-block: 20px;
+  }
+  .about-section {
+    flex-direction: column-reverse;
+  }
+  .text-about-section {
+    margin-top: var(--space-1);
+    flex: auto;
+  }
+  .pic-about-section {
+    justify-content: center;
+  }
+  .btn-resume {
+    width: 100%;
+  }
+  .services-continar {
+    flex-direction: column;
+    gap: unset;
+  }
+  .servive-picture {
+    width: 100%;
+    max-width: none;
+    display: inline-flex;
+    justify-content: center;
+  }
+  .servive-picture img {
+    max-height: 330px;
+  }
+  .reserve-borderbox {
+    flex-direction: column;
+  }
+  .reserve-title-section {
+    width: 100%;
+  }
+  .reserve-title-section img {
+    width: 100px;
+    height: 120px;
+    right: -30px;
+  }
+  .reserve-button-section {
+    width: 100%;
+    justify-content: flex-end;
+    display: inline-flex;
+  }
+  .reserve-button-section button {
+    margin: var(--space-2);
+  }
+  .reserve-time-btn {
+    height: 45px;
+  }
+  .articles-section {
+    height: 400px;
+  }
+  .articles-wrapper {
+    padding-inline: var(--space-3);
+    padding-top: var(--space-3);
+  }
+  .article-card {
+    flex: 0 0 calc(80% - 12px);
+  }
+  .article-title {
+    font-size: var(--font-size-b1);
+  }
+  .article-excerpt {
+    font-size: var(--font-size-b3);
+  }
+  .tm-rd-2 {
+    width: 65%;
+  }
+  .articles-nav {
+    width: 35%;
+    margin-top: var(--space-2);
+  }
+  .art-btn {
+    width: 45px;
+    height: 40px;
+  }
+
+  /* ── Mobile Bottom Navigation ── */
+  .mobile-bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 9998;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--color-accent);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    margin-inline: 15px;
+    border-radius: var(--radius-md);
+  }
+  .mobile-nav-item {
+    position: relative;
+    width: 25%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 0;
+    background: transparent;
+    color: #636363;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+  .mobile-nav-item svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition:
+      transform 0.2s ease,
+      stroke-width 0.2s ease;
+  }
+  .mobile-nav-item span:last-child {
+    font-size: var(--font-size-b3);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .mobile-nav-item:active {
+    transform: scale(0.92);
+  }
+  .mobile-nav-item:hover,
+  .mobile-nav-item:focus-visible {
+    color: #1d1d1d;
+  }
+  .mobile-nav-item:hover svg {
+    transform: translateY(-2px);
+  }
+
+  /* Menu Icon */
+  .mobile-menu-icon {
+    width: 21px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+  .mobile-menu-icon span {
+    display: block;
+    width: 20px;
+    height: 1.8px;
+    border-radius: 10px;
+    background: currentColor;
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+
+  /* Menu Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: block;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  /* Menu Drawer */
+  .mobile-menu-drawer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    display: block;
+    max-height: 85vh;
+    background: #ffffff;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(105%);
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+    overflow: hidden;
+  }
+
+  /* Open state */
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+  body.mobile-menu-open .mobile-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  body.mobile-menu-open .mobile-menu-drawer {
+    transform: translateY(0);
+  }
+
+  /* Menu Header */
+  .mobile-menu-header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .mobile-menu-title {
+    font-size: 17px;
+    color: #222;
+  }
+  .mobile-menu-close {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: #f5f5f5;
+    cursor: pointer;
+  }
+  .mobile-menu-close span {
+    position: absolute;
+    width: 17px;
+    height: 1.7px;
+    border-radius: 10px;
+    background: #333;
+  }
+  .mobile-menu-close span:first-child {
+    transform: rotate(45deg);
+  }
+  .mobile-menu-close span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  /* Menu Items */
+  .mobile-menu-content {
+    max-height: calc(85vh - 72px);
+    overflow-y: auto;
+    padding: 12px 18px 30px;
+  }
+  .mobile-nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mobile-nav-menu > li {
+    margin: 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .mobile-nav-menu > li:last-child {
+    border-bottom: 0;
+  }
+  .mobile-nav-menu > li > a {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: #292929;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      padding 0.2s ease,
+      color 0.2s ease;
+  }
+  .mobile-nav-menu > li > a:hover {
+    padding-right: 14px;
+    color: #111;
+  }
+
+  /* Sub Menu */
+  .mobile-nav-menu .sub-menu {
+    margin: 0 10px 10px;
+    padding: 0 12px;
+    list-style: none;
+    border-right: 1px solid #eeeeee;
+  }
+  .mobile-nav-menu .sub-menu a {
+    display: block;
+    padding: 10px 8px;
+    color: #777;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  /* Space for bottom nav */
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+/* =========================================================
+   MOBILE PHONE (max-width: 700px)
+   ========================================================= */
+@media (max-width: 700px) {
+  /* ── About Us Page ── */
+  .about-hero {
+    padding: 50px 0;
+  }
+  .about-hero-grid {
+    gap: 45px;
+  }
+  .about-label {
+    margin-bottom: 30px;
+  }
+  .about-hero h1 {
+    font-size: clamp(36px, 9vw, 50px);
+  }
+  .about-hero-content > p {
+    font-size: var(--font-size-b3);
+    line-height: 2;
+  }
+  .about-hero-actions {
+    gap: 18px;
+  }
+  .about-btn {
+    font-size: 12px;
+  }
+  .lawyer-resume,
+  .lawyer-approach,
+  .institute,
+  .about-process,
+  .about-trust {
+    padding: 65px 0;
+  }
+  .section-intro {
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+    margin-bottom: 38px;
+  }
+  .section-intro h2,
+  .institute-head h2,
+  .process-head h2 {
+    font-size: 34px;
+  }
+  .resume-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 23px 0;
+  }
+  .resume-row-title {
+    flex-direction: row;
+    gap: 12px;
+  }
+  .resume-summary {
+    padding: 25px 0;
+  }
+  .resume-meta div {
+    align-items: flex-start;
+  }
+  .resume-meta strong {
+    text-align: right;
+  }
+  .approach-heading h2,
+  .trust-content h2 {
+    font-size: 36px;
+  }
+  .approach-points,
+  .institute-features {
+    grid-template-columns: 1fr;
+  }
+  .approach-points div,
+  .institute-features > div {
+    border-inline-start: 0;
+    border-top: 1px solid var(--about-line);
+  }
+  .approach-points div:first-child,
+  .institute-features > div:first-child {
+    border-top: 0;
+  }
+  .institute-head {
+    align-items: flex-start;
+  }
+  .institute-image {
+    min-height: 330px;
+  }
+  .institute-content h3 {
+    font-size: 29px;
+  }
+  .process-item {
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+  }
+  .trust-grid {
+    gap: 40px;
+  }
+  .about-cta {
+    padding: 65px 0;
+  }
+  .about-cta h2 {
+    font-size: 36px;
+  }
+
+  /* ── Contact Us Page ── */
+  .contact-hero {
+    padding: 60px 0 65px;
+  }
+  .contact-hero-content h1 {
+    font-size: 35px;
+  }
+  .contact-hero-content p {
+    font-size: 12px;
+  }
+  .contact-main {
+    padding-bottom: 65px;
+  }
+  .contact-form-box {
+    padding: 28px 20px;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .contact-form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .contact-submit {
+    width: 100%;
+  }
+  .contact-location {
+    padding: 65px 0;
+  }
+  .contact-location-heading h2,
+  .contact-cta h2 {
+    font-size: 32px;
+  }
+  .contact-location-card {
+    min-height: auto;
+  }
+  .contact-map {
+    min-height: 280px;
+  }
+  .contact-address {
+    padding: 30px 22px;
+  }
+  .contact-address-number {
+    top: 22px;
+    inset-inline-end: 18px;
+    font-size: 50px;
+  }
+  .contact-address-meta {
+    grid-template-columns: 1fr;
+  }
+  .contact-cta {
+    padding: 60px 0;
+  }
+  .contact-cta-button {
+    width: 100%;
+  }
+
+  /* ── Terms / Legal Page ── */
+  .legal-hero {
+    padding: 55px 0 65px;
+  }
+  .legal-hero-index {
+    margin-top: 20px;
+  }
+  .legal-hero h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  .legal-hero-description {
+    margin-top: 30px;
+    padding-top: 25px;
+    font-size: var(--font-size-b3);
+    line-height: 2;
+  }
+  .legal-content {
+    padding: 65px 0 70px;
+  }
+  .legal-sidebar-nav {
+    grid-template-columns: 1fr;
+  }
+  .legal-sidebar-nav a {
+    border-inline-end: 0;
+  }
+  .legal-section {
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+  }
+  .legal-section-header {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 17px;
+    margin-bottom: 25px;
+  }
+  .legal-section-number {
+    width: 42px;
+    height: 42px;
+    line-height: 37px;
+    font-size: 11px;
+  }
+  .legal-section h2 {
+    font-size: var(--font-size-h3);
+    line-height: 1.5;
+  }
+  .legal-section-body {
+    padding-inline-start: 0;
+  }
+  html[dir="ltr"] .legal-section-body {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+  .legal-section-body p,
+  .legal-section-body li {
+    font-size: var(--font-size-b3);
+    line-height: 2;
+  }
+  .legal-note {
+    padding: 20px;
+    margin: 28px 0;
+  }
+  .legal-contact-box {
+    padding: 25px 20px;
+  }
+  .legal-contact-box-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .legal-contact-list {
+    grid-template-columns: 1fr;
+  }
+  .legal-footer-note {
+    padding-bottom: 65px;
+  }
+  .legal-footer-note-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .legal-cta {
+    padding: 65px 0;
+  }
+  .legal-cta h2 {
+    font-size: 35px;
+  }
+  .legal-cta p {
+    font-size: var(--font-size-b3);
+  }
+  .legal-cta-button {
+    width: 100%;
+  }
+
+  /* ── Footer ── */
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-col {
+    width: 100%;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* ── Auth Modal ── */
+  .auth-modal {
+    padding: 16px;
+  }
+  .auth-modal-dialog {
+    max-width: 100%;
+    max-height: calc(100vh - 32px);
+    padding: 36px 24px 28px;
+    border-radius: 18px;
+  }
+  .auth-modal-close {
+    top: 14px;
+    right: 14px;
+  }
+  .auth-modal-logo {
+    margin-bottom: 20px;
+  }
+  .auth-modal-logo img {
+    width: 58px;
+    height: 58px;
+  }
+  .auth-modal-heading {
+    margin-bottom: 25px;
+  }
+  .auth-modal-heading h2 {
+    font-size: 20px;
+  }
+  .auth-modal-heading p {
+    font-size: 13px;
+  }
+  .auth-method-button {
+    min-height: 64px;
+  }
+  .auth-otp-inputs {
+    gap: 6px;
+  }
+  .auth-otp-input {
+    width: 42px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE (max-width: 576px)
+   ========================================================= */
+@media (max-width: 576px) {
+  /* ── Main Page - Services ── */
+  .service-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── Booking Page ── */
+  .booking-app .container.flex {
+    padding-inline: var(--space-2);
+  }
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .summary-box {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .summary-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-line);
+  }
+  .summary-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .calendar-switcher button {
+    font-size: 11px;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  /* ── Account / Dashboard ── */
+  .dashboard-content {
+    padding: 20px 16px;
+  }
+  .content-header h1 {
+    font-size: 20px;
+  }
+  .profile-form-box {
+    padding: 20px 16px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .conversation-box {
+    padding: 16px;
+    max-height: 350px;
+  }
+  .chat-bubble {
+    max-width: 95%;
+    padding: 12px 14px;
+  }
+  .ticket-card {
+    padding: 14px 16px;
+  }
+  .ticket-subject {
+    font-size: 14px;
+  }
+
+  /* ── Auth Modal ── */
+  .auth-modal-dialog {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+  .auth-otp-inputs {
+    gap: 4px;
+  }
+  .auth-otp-input {
+    width: 39px;
+    height: 47px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE (max-width: 420px)
+   ========================================================= */
+@media (max-width: 420px) {
+  /* ── About Us Page ── */
+  .about-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-image-frame {
+    aspect-ratio: 3/4;
+  }
+  .resume-meta div {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .expertise-list span {
+    font-size: 11px;
+  }
+  .institute-image {
+    min-height: 280px;
+  }
+}
+
+/* =========================================================
+   PRINT STYLES
+   ========================================================= */
+@media print {
+  .mobile-bottom-nav,
+  .mobile-menu-overlay,
+  .mobile-menu-drawer,
+  .booking-sidebar,
+  .calendar-switcher,
+  .calendar-nav button,
+  .btn-confirm,
+  .sidebar-footer-info,
+  .share-wrapper,
+  .favorite-wrapper,
+  .dashboard-sidebar {
+    display: none !important;
+  }
+
+  .booking-app .container.flex,
+  .dashboard-wrapper,
+  .single-wrapper {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .booking-main,
+  .dashboard-content,
+  .post-section {
+    box-shadow: none;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION (Accessibility)
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after,
+  .booking-app *,
+  .booking-app *::before,
+  .booking-app *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   ACCOUNT / DASHBOARD PAGE - RESPONSIVE
+   =========================================================
+   Breakpoints:
+   - 992px:  Tablet - تبدیل Grid به تک ستون
+   - 768px:  Small Tablet - Sidebar افقی
+   - 700px:  Mobile - Sidebar به Grid
+   - 576px:  Small Mobile - بهینه‌سازی فونت‌ها
+   - 420px:  Extra Small - تک ستونه
+   ========================================================= */
+
+/* =========================================================
+   TABLET (max-width: 992px)
+   - تبدیل 2 ستونه به تک ستونه
+   - Sidebar بالای محتوا
+   ========================================================= */
+@media (max-width: 992px) {
+  /* ── Layout ── */
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* ── Sidebar → Horizontal Navigation ── */
+  .dashboard-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .sidebar-profile {
+    flex: 0 0 100%;
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    font-size: 13px;
+    width: auto;
+  }
+
+  .nav-item.active::before {
+    display: none;
+  }
+
+  .sidebar-footer {
+    flex: 0 0 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .logout-btn {
+    width: auto;
+    padding: 10px 16px;
+  }
+
+  /* ── Main Content ── */
+  .dashboard-content {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  /* ── Stats Grid ── */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stat-info strong {
+    font-size: 20px;
+  }
+
+  /* ── Data Table ── */
+  .data-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: -20px;
+    padding-inline: 20px;
+  }
+
+  .data-table {
+    min-width: 700px;
+  }
+
+  /* ── Support Views ── */
+  .conversation-box {
+    padding: 20px;
+    max-height: 400px;
+  }
+
+  .chat-bubble {
+    max-width: 90%;
+  }
+
+  .new-ticket-form {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET (max-width: 768px)
+   - Sidebar فشرده‌تر
+   - Nav items کوچک‌تر
+   ========================================================= */
+@media (max-width: 768px) {
+  /* ── Dashboard Page ── */
+  .dashboard-page {
+    padding: 24px 0 60px;
+  }
+
+  /* ── Sidebar ── */
+  .dashboard-sidebar {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .sidebar-profile {
+    gap: 12px;
+  }
+
+  .profile-avatar {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .profile-info strong {
+    font-size: 14px;
+  }
+
+  .profile-info span {
+    font-size: 11px;
+  }
+
+  .sidebar-nav {
+    gap: 4px;
+  }
+
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .nav-item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .nav-badge {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .logout-btn {
+    padding: 10px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  /* ── Content Header ── */
+  .content-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .content-header h1 {
+    font-size: 20px;
+  }
+
+  .content-header p {
+    font-size: 13px;
+  }
+
+  /* ── Support Actions ── */
+  .support-list-actions {
+    justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .support-list-actions .btn-primary,
+  #accountSaveButton {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* ── Ticket Cards ── */
+  .ticket-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .ticket-subject {
+    font-size: 14px;
+  }
+
+  .ticket-card-meta span {
+    font-size: 12px;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .ticket-card-meta small {
+    font-size: 10px;
+  }
+
+  .ticket-card-arrow {
+    font-size: 18px;
+  }
+
+  /* ── Conversation ── */
+  .conversation-box {
+    padding: 16px;
+    max-height: 350px;
+    gap: 12px;
+  }
+
+  .chat-bubble {
+    max-width: 95%;
+    padding: 12px 14px;
+  }
+
+  .bubble-meta {
+    font-size: 10px;
+  }
+
+  .bubble-text {
+    font-size: 13px;
+  }
+
+  .reply-form {
+    padding: 16px;
+  }
+
+  .reply-form textarea {
+    padding: 10px;
+    font-size: 13px;
+    min-height: 80px;
+  }
+
+  /* ── Forms ── */
+  .new-ticket-form {
+    padding: 20px;
+  }
+
+  .profile-form-box {
+    padding: 20px;
+  }
+  .profile-form-box .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .form-row .form-group {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+    top: 23px;
+  }
+
+  .form-group input:focus ~ label,
+  .form-group input:not(:placeholder-shown) ~ label,
+  .form-group textarea:focus ~ label,
+  .form-group textarea:not(:placeholder-shown) ~ label {
+    font-size: 10px;
+  }
+  .form-hint {
+    font-size: 10px;
+    padding-inline: 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE (max-width: 700px)
+   - Nav items به Grid 2x2
+   - Stats کوچک‌تر
+   ========================================================= */
+@media (max-width: 700px) {
+  .dashboard-page {
+    padding: 16px 0 50px;
+  }
+
+  .dashboard-wrapper {
+    gap: 16px;
+  }
+
+  .dashboard-sidebar {
+    padding: 14px;
+    gap: 10px;
+    border-radius: var(--radius-lg);
+  }
+
+  .sidebar-profile {
+    padding-bottom: 12px;
+    margin-bottom: 6px;
+  }
+
+  .profile-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .profile-info strong {
+    font-size: 13px;
+  }
+
+  .profile-info span {
+    font-size: 10px;
+  }
+
+  /* ── Nav Items → 2x2 Grid ── */
+  .sidebar-nav {
+    gap: 4px;
+    width: 100%;
+  }
+
+  .nav-item {
+    flex: 1 1 calc(50% - 4px);
+    padding: 8px 10px;
+    font-size: 11px;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .nav-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav-badge {
+    display: none;
+  }
+
+  .logout-btn {
+    padding: 8px;
+    font-size: 12px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ── Main Content ── */
+  .dashboard-content {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .content-header h1 {
+    font-size: 18px;
+  }
+
+  .content-header p {
+    font-size: 12px;
+  }
+
+  /* ── Stats ── */
+  .stat-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .stat-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stat-info span {
+    font-size: 11px;
+  }
+
+  .stat-info strong {
+    font-size: 18px;
+  }
+
+  /* ── Data Table ── */
+  .data-table-wrapper {
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
+
+  .data-table {
+    min-width: 600px;
+    font-size: 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 12px 10px;
+  }
+
+  .status-badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  /* ── Support ── */
+  .support-list-actions .btn-primary,
+  #accountSaveButton {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .tickets-list-wrapper {
+    gap: 10px;
+  }
+
+  .ticket-card {
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .ticket-subject {
+    font-size: 13px;
+  }
+
+  .detail-subject {
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  .btn-back {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .conversation-box {
+    padding: 14px;
+    max-height: 300px;
+    border-radius: var(--radius-md);
+  }
+
+  .chat-bubble {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .bubble-text {
+    font-size: 12px;
+  }
+
+  .reply-form {
+    padding: 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .reply-form textarea {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .btn-sm {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* ── New Ticket Form ── */
+  .new-ticket-form {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .new-ticket-form .form-group {
+    margin-bottom: 14px;
+  }
+
+  .new-ticket-form label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .new-ticket-form input,
+  .new-ticket-form textarea {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .new-ticket-form textarea {
+    min-height: 100px;
+  }
+
+  /* ── Profile Form ── */
+  .profile-form-box {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    height: 44px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .form-group label {
+    top: 20px;
+    right: 12px;
+    font-size: 12px;
+  }
+
+  .form-group input:focus ~ label,
+  .form-group input:not(:placeholder-shown) ~ label,
+  .form-group textarea:focus ~ label,
+  .form-group textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 9px;
+  }
+
+  html[dir="ltr"] .form-group label {
+    left: 12px;
+    right: auto;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE (max-width: 576px)
+   - فشرده‌ترین حالت
+   ========================================================= */
+@media (max-width: 576px) {
+  .dashboard-sidebar {
+    padding: 12px;
+  }
+
+  .profile-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .dashboard-content {
+    padding: 16px 12px;
+  }
+
+  .content-header h1 {
+    font-size: 16px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-info strong {
+    font-size: 16px;
+  }
+
+  .data-table-wrapper {
+    margin-inline: -12px;
+    padding-inline: 12px;
+  }
+
+  .ticket-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ticket-card-arrow {
+    align-self: flex-end;
+  }
+
+  .conversation-box {
+    padding: 12px;
+    max-height: 280px;
+  }
+
+  .chat-bubble {
+    max-width: 100%;
+    padding: 8px 10px;
+  }
+
+  .bubble-text {
+    font-size: 11px;
+  }
+
+  .profile-form-box {
+    padding: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    height: 42px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE (max-width: 420px)
+   - Nav items تک ستونه
+   ========================================================= */
+@media (max-width: 420px) {
+  .nav-item {
+    flex: 1 1 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-info {
+    text-align: center;
+  }
+
+  .ticket-card-meta {
+    width: 100%;
+  }
+
+  .ticket-card-meta span {
+    white-space: normal;
+  }
+}
+
+/* =========================================================
+   LANDSCAPE MOBILE (max-height: 500px)
+   - بهینه‌سازی برای حالت افقی
+   ========================================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dashboard-page {
+    padding: 12px 0;
+  }
+
+  .conversation-box {
+    max-height: 200px;
+  }
+
+  .dashboard-sidebar {
+    max-height: none;
+  }
+}
+
+/* =========================================================
+   PRINT STYLES (Account Page)
+   ========================================================= */
+@media print {
+  .dashboard-sidebar,
+  .logout-btn,
+  .support-list-actions,
+  .btn-back,
+  .reply-form {
+    display: none !important;
+  }
+
+  .dashboard-wrapper {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .dashboard-content {
+    box-shadow: none;
+    border: none;
+  }
+
+  .dashboard-page {
+    padding: 0;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}

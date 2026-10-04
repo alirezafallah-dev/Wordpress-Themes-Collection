@@ -1,0 +1,494 @@
+/* =========================================================
+   COMMENTS SECTION
+   Premium Editorial Design
+   ========================================================= */
+
+/* ──────────────────────────────────────────
+   Comments Header
+   ────────────────────────────────────────── */
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.comments-header h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-medium);
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.comments-count {
+  width: 35px;
+  height: 35px;
+  border-radius: var(--radius-sm);
+  background: var(--color-secondary);
+  color: var(--color-accent);
+  display: flex;
+  font-size: var(--font-size-b3);
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--font-regular);
+}
+
+/* ──────────────────────────────────────────
+   Comments List
+   ────────────────────────────────────────── */
+.comments-list {
+  margin-bottom: var(--space-3);
+}
+
+.says {
+  display: none;
+}
+
+.comment {
+  display: flex;
+  gap: 18px;
+  padding: var(--space-3);
+  margin-bottom: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.comment img {
+  border-radius: var(--radius-md);
+  height: 60px;
+  max-height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+.comment-author {
+  font-weight: var(--font-semibold);
+  display: flex;
+  gap: var(--space-4);
+}
+
+.comment-author-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.comment-author-name {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-medium);
+  color: var(--color-text-main);
+}
+
+.comment-author-role {
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-b3);
+  background: var(--color-background);
+  color: var(--color-secondary);
+  font-weight: var(--font-medium);
+}
+
+.comment-content {
+  line-height: 2;
+  color: var(--color-text-main);
+}
+
+.comment-item {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: 30px;
+}
+
+.comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.comment-date {
+  margin-top: 6px;
+  font-size: var(--font-size-b3);
+  color: var(--color-text-2);
+}
+
+/* ──────────────────────────────────────────
+   Reply Button
+   ────────────────────────────────────────── */
+.reply a {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reply a:hover {
+  color: var(--color-secondary);
+}
+
+.comment-reply a {
+  color: var(--color-accent);
+  background: var(--color-secondary);
+  text-decoration: none;
+  font-weight: var(--font-regular);
+  font-size: var(--font-size-b3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.comment-reply a:hover {
+  background: var(--color-text-main);
+  transform: translateX(-2px);
+}
+
+.comment-reply a::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url("../../img/turn-back.png") no-repeat center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.comment-message {
+  margin-top: 6px;
+  background: var(--color-box);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3) var(--space-4);
+  line-height: 1.8;
+  color: var(--color-text-main);
+}
+
+/* ──────────────────────────────────────────
+   Nested Comments (Children)
+   ────────────────────────────────────────── */
+ul.children {
+  margin-inline-start: 10%;
+  margin-top: -15px;
+}
+
+.comment-parent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 0;
+  color: var(--color-secondary);
+  font-size: 13px;
+  font-weight: var(--font-medium);
+}
+
+.comment-parent svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ──────────────────────────────────────────
+   Comment Form Wrapper
+   ────────────────────────────────────────── */
+.comment-form-wrapper {
+  background: #fff;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.comment-reply-title {
+  display: none;
+}
+
+.comment-notes,
+.comment-notes-after {
+  display: none;
+}
+
+.comment-logged-in {
+  display: none;
+}
+
+/* ──────────────────────────────────────────
+   Comment Form Layout (Grid)
+   ────────────────────────────────────────── */
+.comment-form {
+  display: grid;
+  gap: 20px;
+  padding-top: var(--space-2);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "comment-form-author comment-form-phone"
+    "comment-form-comment comment-form-comment"
+    "comment-form-cookies-consent form-submit";
+}
+
+.comment-form-phone {
+  grid-area: comment-form-phone;
+}
+
+.comment-form-author {
+  grid-area: comment-form-author;
+}
+
+.comment-form-comment {
+  grid-area: comment-form-comment;
+}
+
+.comment-form-cookies-consent {
+  grid-area: comment-form-cookies-consent;
+  font-size: var(--font-size-b2);
+  align-content: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-form-cookies-consent input {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.comment-form-cookies-consent label {
+  font-size: var(--font-size-b3);
+  color: var(--color-text-2);
+  margin: 0;
+}
+
+.form-submit {
+  grid-area: form-submit;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ──────────────────────────────────────────
+   Form Group (Floating Labels)
+   ────────────────────────────────────────── */
+.form-group {
+  position: relative;
+  margin: 0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  outline: none;
+  font-size: var(--font-size-b2);
+  font-family: inherit;
+  background: var(--color-accent);
+  color: var(--color-text-main);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+/* Floating Label Animation */
+.form-group label {
+  position: absolute;
+  top: 24px;
+  right: 14px;
+  transform: translateY(-50%);
+  font-size: var(--font-size-b2);
+  font-weight: var(--font-regular);
+  color: var(--color-text-2);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: var(--color-accent);
+  padding: 0 6px;
+  z-index: 1;
+}
+.form-hint {
+  font-size: var(--font-size-b3);
+}
+.form-group textarea ~ label {
+  top: 18px;
+  transform: none;
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:placeholder-shown) ~ label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--color-secondary);
+  font-weight: var(--font-medium);
+  transform: translateY(0);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 240, 234, 1) 0%,
+    rgba(250, 250, 250, 1) 35%,
+    rgba(255, 252, 247, 1) 65%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: var(--radius-sm);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(44, 90, 138, 0.08);
+}
+
+/* ──────────────────────────────────────────
+   Submit Button
+   ────────────────────────────────────────── */
+.comment-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-size: var(--font-size-b1);
+  font-weight: var(--font-medium);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+
+.comment-submit:hover {
+  background: var(--color-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 90, 138, 0.2);
+}
+
+.comment-submit:active {
+  transform: translateY(0);
+}
+
+.comment-submit svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.comment-submit:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ──────────────────────────────────────────
+   Error States
+   ────────────────────────────────────────── */
+.form-error {
+  display: block;
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 13px;
+  min-height: 18px;
+  line-height: 1.4;
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08) !important;
+}
+
+/* ──────────────────────────────────────────
+   No Comments State
+   ────────────────────────────────────────── */
+.no-comments {
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--color-accent);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-line);
+  color: var(--color-text-2);
+  font-size: var(--font-size-b1);
+}
+
+/* ──────────────────────────────────────────
+   Comments Navigation
+   ────────────────────────────────────────── */
+.comments-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.comments-navigation a,
+.comments-navigation span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text-main);
+  background: var(--color-accent);
+  border: 1px solid var(--color-line);
+  font-size: var(--font-size-b2);
+  transition: all 0.2s ease;
+}
+
+.comments-navigation a:hover {
+  background: var(--color-box);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.comments-navigation .current {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-accent);
+  font-weight: var(--font-semibold);
+}
+
+/* ──────────────────────────────────────────
+   RTL Support Adjustments
+   ────────────────────────────────────────── */
+html[dir="ltr"] .form-group label {
+  right: auto;
+  left: 14px;
+}
+
+html[dir="ltr"] .comment-reply a {
+  flex-direction: row-reverse;
+}
+
+html[dir="ltr"] .comment-reply a:hover {
+  transform: translateX(2px);
+}
+
+html[dir="ltr"] .comment-submit svg {
+  transform: scaleX(-1);
+}
+
+html[dir="ltr"] .comment-submit:hover svg {
+  transform: scaleX(-1) translateX(-3px);
+}

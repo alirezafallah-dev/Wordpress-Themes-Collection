@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────
+   Universal Reset
+   ────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────
+   Images
+   ────────────────────────────────────────── */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ──────────────────────────────────────────
+   Lists
+   ────────────────────────────────────────── */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ──────────────────────────────────────────
+   Links
+   ────────────────────────────────────────── */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-txthover);
+  text-decoration: none;
+}
+
+/* ──────────────────────────────────────────
+   Horizontal Rule
+   ────────────────────────────────────────── */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--color-line);
+  margin: 1rem 0;
+}
+
+/* ──────────────────────────────────────────
+   Labels
+   ────────────────────────────────────────── */
+label {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+/* ──────────────────────────────────────────
+   Buttons & Inputs Reset
+   ────────────────────────────────────────── */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ──────────────────────────────────────────
+   Tables
+   ────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ──────────────────────────────────────────
+   Focus Styles (Accessibility)
+   ────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ──────────────────────────────────────────
+   Selection
+   ────────────────────────────────────────── */
+::selection {
+  background: rgba(164, 131, 78, 0.2);
+  color: var(--color-text-main);
+}
+
+/* ──────────────────────────────────────────
+   Scrollbar (Webkit)
+   ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

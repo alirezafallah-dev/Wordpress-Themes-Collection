@@ -1,0 +1,79 @@
+:root {
+  /* ═══════════════════════════════════════════
+     COLORS
+     ═══════════════════════════════════════════ */
+  --color-background: #faf8f4;
+  --color-accent: #ffffff;
+  --color-primary: #a4834e;
+  --color-secondary: #2c5a8a;
+  --color-box: #f4f0ea;
+
+  /* متن‌ها */
+  --color-text: #1f3a5f; /* ✅ جدید - alias برای text-main */
+  --color-text-main: #1f3a5f;
+  --color-text-1: #1c2430;
+  --color-text-2: #6b7280;
+  --color-txthover: #a4834e; /* ✅ جدید - رنگ hover لینک‌ها */
+
+  /* خطوط و بوردرها */
+  --color-border: #565656;
+  --color-line: #d7dce3;
+
+  /* ═══════════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════════ */
+  --font-size-base: 16px;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --font-size-h4: 18px;
+  --font-size-b1: 16px;
+  --font-size-b2: 14px;
+  --font-size-b3: 12px;
+  --font-size-hero: 48px;
+  --line-height-base: 1.7;
+
+  /* ═══════════════════════════════════════════
+     SPACING
+     ═══════════════════════════════════════════ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+
+  /* ═══════════════════════════════════════════
+     FONT WEIGHTS
+     ═══════════════════════════════════════════ */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ═══════════════════════════════════════════
+     BORDER RADIUS
+     ═══════════════════════════════════════════ */
+  --radius-l: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* ═══════════════════════════════════════════
+     SHADOWS
+     ═══════════════════════════════════════════ */
+  --shadow-sm: 0 6px 18px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 6px 18px rgba(17, 24, 39, 0.15);
+
+  /* ═══════════════════════════════════════════
+     TRANSITIONS
+     ═══════════════════════════════════════════ */
+  --transition: 0.3s ease;
+}

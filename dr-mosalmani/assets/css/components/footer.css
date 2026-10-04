@@ -1,0 +1,224 @@
+/* =========================================================
+FOOTER
+========================================================= */
+.site-footer {
+  height: auto;
+  min-height: 200px;
+  color: var(--color-accent, #ffffff);
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  background: var(--color-primary, #1a1a2e);
+  padding: var(--space-4, 2rem);
+  border-radius: var(--radius-lg, 1rem);
+}
+
+/* ──────────────────────────────────────────
+Footer Top (Flex Layout)
+────────────────────────────────────────── */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* گروه‌بندی ۴ بخش اصلی در یک سکشن واحد */
+.footer-links-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  flex: 1;
+  min-width: 0; /* جلوگیری از سرریز شدن فلکس آیتم */
+}
+
+/* ──────────────────────────────────────────
+Footer Column
+────────────────────────────────────────── */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-title {
+  font-size: var(--font-size-h4, 1.125rem);
+  color: var(--color-accent, #ffffff);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-accent, #ffffff);
+}
+
+/* ──────────────────────────────────────────
+Footer Links
+────────────────────────────────────────── */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-col a {
+  color: var(--color-accent, #ffffff);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-col a:hover {
+  color: var(--color-text-main, #ffd700);
+  transform: translateX(-4px); /* حرکت به چپ در حالت RTL */
+}
+
+.footer-contact a svg path {
+  transition: all 0.3s ease;
+}
+
+.footer-contact a:hover svg path {
+  stroke: var(--color-text-main, #ffd700);
+}
+
+/* ──────────────────────────────────────────
+Footer Contact Info
+────────────────────────────────────────── */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-accent, #ffffff);
+  margin-bottom: 12px;
+}
+
+/* ──────────────────────────────────────────
+Social Media Box (اینستاگرام و بله)
+────────────────────────────────────────── */
+.footer-social-box {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  width: 100px;
+  flex-shrink: 0;
+  gap: 1.25rem;
+}
+
+.social-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  background: #68686812;
+}
+
+.social-item:hover {
+  color: var(--color-accent);
+  opacity: 0.85;
+  transform: scale(1.01);
+  z-index: 2;
+}
+
+.social-icon {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: #ffffff;
+}
+
+.social-text {
+  font-size: 0.925rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* ──────────────────────────────────────────
+Footer Bottom
+────────────────────────────────────────── */
+.footer-bottom {
+  text-align: center;
+  font-size: var(--font-size-b2, 0.875rem);
+  color: var(--color-accent, #ffffff);
+  padding: var(--space-3, 1rem);
+  display: flex;
+  justify-content: center;
+  border-top: solid 1px var(--color-box, rgba(255, 255, 255, 0.1));
+  margin-top: 2.5rem;
+}
+
+/* ──────────────────────────────────────────
+RTL / LTR Support
+────────────────────────────────────────── */
+html[dir="ltr"] .footer-col a:hover {
+  transform: translateX(4px);
+}
+
+/* ──────────────────────────────────────────
+Responsive Design
+────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .footer-social-box {
+    flex-direction: row;
+    width: 100%;
+    height: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-social-box {
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+  }
+}

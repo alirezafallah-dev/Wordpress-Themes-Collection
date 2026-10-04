@@ -1,0 +1,875 @@
+/* =========================================================
+   AUTH MODAL
+========================================================= */
+
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.auth-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.auth-modal-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(15, 15, 15, 0.52);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* =========================================================
+   DIALOG
+========================================================= */
+
+.auth-modal-dialog {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 440px;
+
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(164, 131, 78, 0.12);
+
+  border-radius: 22px;
+
+  padding: 42px 40px 34px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.18),
+    0 8px 30px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(18px) scale(0.97);
+
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-modal.is-open .auth-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.auth-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f7f6f3;
+
+  color: #777;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  background: rgba(164, 131, 78, 0.12);
+
+  color: #a4834e;
+
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.auth-step {
+  width: 100%;
+  display: grid;
+}
+
+.auth-step[hidden] {
+  display: none !important;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.auth-modal-logo {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 24px;
+}
+
+.auth-modal-logo img {
+  display: block;
+
+  width: 68px;
+  height: 68px;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.auth-modal-heading {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.auth-modal-heading h2 {
+  margin: 0 0 10px;
+
+  color: #202020;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  line-height: 1.7;
+}
+
+.auth-modal-heading p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.auth-modal-heading strong {
+  color: #555;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   AUTH METHODS
+========================================================= */
+
+.auth-methods {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+/* =========================================================
+   GOOGLE
+========================================================= */
+
+.auth-google-wrapper {
+  width: 100%;
+}
+
+.google-sign-in-button {
+  width: 100%;
+
+  min-height: 48px;
+}
+
+/*
+   Temporary Google button placeholder.
+
+   بعداً Google Identity Services
+   این قسمت را کنترل می‌کند.
+*/
+
+.google-sign-in-button:empty {
+  min-height: 52px;
+
+  border: 1px solid #dedede;
+  border-radius: 12px;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 3px 0;
+}
+
+.auth-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #e8e8e8;
+}
+
+.auth-divider strong {
+  flex-shrink: 0;
+
+  color: #aaa;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   AUTH METHOD BUTTON
+========================================================= */
+
+.auth-method-button {
+  position: relative;
+
+  width: 100%;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 11px 16px;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  text-align: right;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-method-button:hover {
+  border-color: rgba(164, 131, 78, 0.55);
+
+  background: rgba(164, 131, 78, 0.035);
+
+  box-shadow: 0 8px 24px rgba(164, 131, 78, 0.08);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   METHOD ICON
+========================================================= */
+
+.auth-method-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 13px;
+
+  border-radius: 11px;
+
+  background: rgba(164, 131, 78, 0.09);
+
+  color: #a4834e;
+}
+
+.auth-method-icon svg {
+  display: block;
+}
+
+/* =========================================================
+   METHOD CONTENT
+========================================================= */
+
+.auth-method-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  flex: 1;
+}
+
+.auth-method-content strong {
+  color: #292929;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.6;
+}
+
+.auth-method-content small {
+  color: #999;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   METHOD ARROW
+========================================================= */
+
+.auth-method-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #aaa;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-method-button:hover .auth-method-arrow {
+  color: #a4834e;
+
+  transform: translateX(-3px);
+}
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.auth-modal-footer {
+  margin-top: 24px;
+
+  text-align: center;
+}
+
+.auth-modal-footer p {
+  max-width: 330px;
+
+  margin: 0 auto;
+
+  color: #a0a0a0;
+
+  font-size: 10px;
+
+  line-height: 1.9;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.auth-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-self: flex-end;
+  justify-self: flex-end;
+  gap: 6px;
+  margin: -6px 0 24px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: #888;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-back-button:hover {
+  color: #a4834e;
+
+  transform: translateX(-2px);
+}
+
+/* =========================================================
+   STEP ICON
+========================================================= */
+
+.auth-step-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 16px;
+
+  background: rgba(164, 131, 78, 0.09);
+
+  color: #a4834e;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.auth-mobile-form,
+.auth-otp-form {
+  width: 100%;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.auth-form-group {
+  margin-bottom: 18px;
+}
+
+.auth-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #444;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.auth-input-wrapper {
+  position: relative;
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dedede;
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #222;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  direction: ltr;
+  text-align: left;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-input-wrapper input::placeholder {
+  color: #b5b5b5;
+}
+
+.auth-input-wrapper input:focus {
+  border-color: #a4834e;
+
+  box-shadow: 0 0 0 3px rgba(164, 131, 78, 0.1);
+}
+.auth-input-wrapper input.has-error {
+  border-color: #c84b4b;
+  box-shadow: 0 0 0 3px rgba(200, 75, 75, 0.08);
+}
+
+.auth-otp-input.has-error {
+  border-color: #c84b4b;
+  box-shadow: 0 0 0 3px rgba(200, 75, 75, 0.08);
+}
+/* =========================================================
+   FIELD ERROR
+========================================================= */
+
+.auth-field-error {
+  display: block;
+
+  min-height: 18px;
+
+  margin-top: 6px;
+
+  color: #c84b4b;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.auth-submit-button {
+  position: relative;
+
+  width: 100%;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: #a4834e;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(164, 131, 78, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-submit-button:hover {
+  background: #94723f;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 10px 25px rgba(164, 131, 78, 0.25);
+}
+
+.auth-submit-button:active {
+  transform: translateY(0);
+}
+
+.auth-submit-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.auth-submit-loading {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+.auth-submit-loading span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  animation: authLoading 0.8s infinite ease-in-out;
+}
+
+.auth-submit-loading span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.auth-submit-loading span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.auth-submit-button.is-loading .auth-submit-text {
+  display: none;
+}
+
+.auth-submit-button.is-loading .auth-submit-loading {
+  display: flex;
+}
+
+@keyframes authLoading {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   OTP
+========================================================= */
+
+.auth-otp-inputs {
+  display: flex;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin: 4px 0 8px;
+}
+
+.auth-otp-input {
+  width: 48px;
+  height: 54px;
+
+  padding: 0;
+
+  border: 1px solid #dedede;
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #222;
+
+  font-family: inherit;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  text-align: center;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.auth-otp-input:focus {
+  border-color: #a4834e;
+
+  box-shadow: 0 0 0 3px rgba(164, 131, 78, 0.1);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RESEND
+========================================================= */
+
+.auth-resend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color: #999;
+
+  font-size: 11px;
+}
+
+.auth-resend-button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #a4834e;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.auth-resend-button:disabled {
+  color: #aaa;
+
+  cursor: not-allowed;
+}
+
+.auth-resend-timer {
+  color: #999;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.auth-step-success {
+  padding: 25px 0 15px;
+
+  text-align: center;
+}
+
+.auth-success-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+
+  border-radius: 50%;
+
+  background: rgba(74, 155, 105, 0.1);
+
+  color: #4a9b69;
+}
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.auth-modal-open {
+  overflow: hidden;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 575px) {
+  .auth-modal {
+    padding: 16px;
+  }
+
+  .auth-modal-dialog {
+    max-width: 100%;
+
+    max-height: calc(100vh - 32px);
+
+    padding: 36px 24px 28px;
+
+    border-radius: 18px;
+  }
+
+  .auth-modal-close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .auth-modal-logo {
+    margin-bottom: 20px;
+  }
+
+  .auth-modal-logo img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .auth-modal-heading {
+    margin-bottom: 25px;
+  }
+
+  .auth-modal-heading h2 {
+    font-size: 20px;
+  }
+
+  .auth-modal-heading p {
+    font-size: 13px;
+  }
+
+  .auth-method-button {
+    min-height: 64px;
+  }
+
+  .auth-otp-inputs {
+    gap: 6px;
+  }
+
+  .auth-otp-input {
+    width: 42px;
+    height: 50px;
+
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-modal-dialog {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .auth-otp-inputs {
+    gap: 4px;
+  }
+
+  .auth-otp-input {
+    width: 39px;
+    height: 47px;
+  }
+}

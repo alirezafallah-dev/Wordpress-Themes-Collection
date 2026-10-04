@@ -1,0 +1,891 @@
+/* =========================================
+   FONTS: VAZIR FD (3 Weights)
+   ========================================= */
+@font-face {
+  font-family: "VazirFD";
+  src: url("../fonts/Vazir-Regular-FD.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VazirFD";
+  src: url("../fonts/Vazir-Bold-FD.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VazirFD";
+  src: url("../fonts/Vazir-Black-FD.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================
+   1. FONT — Vazir FD برای کل پنل
+   ========================================= */
+body.wp-admin,
+.wrap h1,
+.wrap h2,
+.wrap h3,
+.footer-thankyou,
+.ab-item {
+  font-family:
+    "VazirFD",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Tahoma,
+    sans-serif !important;
+  font-weight: 400;
+}
+
+/* عناوین با وزن Black */
+body.wp-admin .wrap > h1,
+body.wp-admin .wrap > h2:first-child,
+body.wp-admin h1,
+.lawyer-panel-header h1,
+.support-panel-header h1,
+.ticket-detail-header h2 {
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+}
+
+/* عناوین فرعی با وزن Bold */
+body.wp-admin h2,
+body.wp-admin h3,
+.postbox-header h2,
+.postbox-header h3,
+.admin-reply-box h3,
+.lawyer-edit-box h2 {
+  font-weight: 700 !important;
+}
+
+/* دکمه Primary با وزن Bold */
+body.wp-admin .button-primary,
+body.wp-admin input.button-primary,
+.page-title-action {
+  font-weight: 700 !important;
+}
+
+/* منوی ادمین با وزن Regular/Bold */
+#adminmenu .wp-menu-name {
+  font-weight: 400;
+}
+
+#adminmenu li.current .wp-menu-name,
+#adminmenu li.wp-has-current-submenu .wp-menu-name {
+  font-weight: 700;
+}
+
+#wpwrap {
+  background-color: #faf8f4;
+}
+#wpcontent {
+  padding-left: 30px;
+}
+.lawyer-wrap,
+.lawyer-panel-wrap,
+.wrap {
+  margin: 20px 10px 20px 0 !important;
+}
+/* =========================================
+   2. SCROLLBAR (ظاهر بدون تغییر ساختار)
+   ========================================= */
+body.wp-admin::-webkit-scrollbar {
+  width: 8px;
+}
+body.wp-admin::-webkit-scrollbar-track {
+  background: #f4f0ea;
+}
+body.wp-admin::-webkit-scrollbar-thumb {
+  background: #c9c0b2;
+  border-radius: 10px;
+}
+
+/* =========================================
+   3. ADMIN BAR — فقط رنگ پس‌زمینه و متن
+   ========================================= */
+#wpadminbar {
+  background: #1f3a5f !important;
+  border-bottom: 1px solid #e8e2d8 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#wpadminbar .ab-top-menu > li > .ab-item,
+#wpadminbar .ab-item,
+#wpadminbar a.ab-item,
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon,
+#wpadminbar .ab-icon {
+  color: #fff !important;
+}
+
+#wpadminbar .ab-top-menu > li:hover > .ab-item,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar .ab-top-menu > li > .ab-item:hover,
+#wpadminbar a.ab-item:hover,
+#wpadminbar a.ab-item:focus {
+  color: #a4834e !important;
+  background: rgba(164, 131, 78, 0.08) !important;
+}
+
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#wpadminbar .ab-sub-wrapper .ab-item {
+  color: #fff !important;
+}
+
+.sticky-menu #adminmenuwrap,
+#adminmenuback {
+  top: 40px;
+  right: 0;
+  bottom: 10px;
+  border-radius: 8px 0 0 8px;
+}
+
+ul#adminmenu a.wp-has-current-submenu::after,
+ul#adminmenu > li.current > a.current::after {
+  border-left-color: #1f3a5f !important;
+}
+
+/* =========================================
+   4. ADMIN MENU — فقط رنگ، سایز دست نخورد
+   ========================================= */
+#adminmenuback,
+#adminmenuwrap {
+  background-color: #1f3a5f !important;
+}
+
+#adminmenu {
+  background-color: #1f3a5f !important;
+}
+
+/* آیتم‌های منو */
+#adminmenu .wp-menu-name {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+#adminmenu .wp-menu-image img {
+  opacity: 0.75;
+}
+
+#adminmenu li:hover .wp-menu-image img,
+#adminmenu li.wp-has-current-submenu .wp-menu-image img,
+#adminmenu li.current .wp-menu-image img {
+  opacity: 1;
+}
+
+/* آیکون‌های dashicon */
+#adminmenu .wp-menu-image div.wp-menu-image::before,
+#adminmenu .wp-menu-image::before {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+#adminmenu li:hover .wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu .wp-menu-image::before,
+#adminmenu li.current .wp-menu-image::before {
+  color: #ffffff !important;
+}
+
+/* هاور */
+#adminmenu li:hover,
+#adminmenu li a:focus,
+#adminmenu li.menu-top:hover {
+  background-color: rgba(164, 131, 78, 0.18) !important;
+}
+
+#adminmenu li:hover .wp-menu-name,
+#adminmenu li a:focus .wp-menu-name {
+  color: #ffffff !important;
+}
+
+/* آیتم فعال */
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.current a.menu-top {
+  background-color: #a4834e !important;
+  color: #ffffff !important;
+}
+
+#adminmenu li.current .wp-menu-name,
+#adminmenu li.wp-has-current-submenu .wp-menu-name {
+  color: #ffffff !important;
+}
+
+#adminmenu li.current .wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu .wp-menu-image::before {
+  color: #ffffff !important;
+}
+
+/* زیرمنو */
+#adminmenu .wp-submenu {
+  background-color: #16293f !important;
+}
+
+#adminmenu .wp-submenu li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+#adminmenu .wp-submenu li a:hover,
+#adminmenu .wp-submenu li a:focus {
+  color: #ffffff !important;
+  background-color: rgba(164, 131, 78, 0.2) !important;
+}
+
+#adminmenu .wp-submenu li.current a {
+  color: #ffffff !important;
+}
+
+/* بج آپدیت */
+#adminmenu .awaiting-mod,
+#adminmenu .update-plugins {
+  background-color: #a4834e !important;
+  color: #ffffff !important;
+}
+
+/* جداکننده منو */
+#adminmenu li.wp-menu-separator {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Collapse Button */
+#collapse-button .collapse-button-icon {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+#collapse-button:hover .collapse-button-icon {
+  color: #a4834e !important;
+}
+
+/* =========================================
+   5. CONTENT AREA — فقط پس‌زمینه
+   ========================================= */
+#wpcontent {
+  background-color: #faf8f4;
+}
+
+#wpbody-content {
+  background-color: transparent;
+}
+
+/* =========================================
+   6. PAGE TITLES
+   ========================================= */
+.wrap > h1,
+.wrap > h2:first-child {
+  color: #1f3a5f;
+  font-weight: 700;
+}
+
+.page-title-action {
+  color: #ffffff !important;
+  background: #a4834e !important;
+  border-color: #a4834e !important;
+}
+
+.page-title-action:hover {
+  background: #94723f !important;
+  border-color: #94723f !important;
+}
+
+/* =========================================
+   7. NOTICES — فقط رنگ پس‌زمینه
+   ========================================= */
+.notice {
+  border-radius: 8px;
+}
+
+.notice-success {
+  border-left-color: #16a34a;
+}
+
+.notice-error {
+  border-left-color: #dc2626;
+}
+
+.notice-warning {
+  border-left-color: #ca8a04;
+}
+
+.notice-info {
+  border-left-color: #2c5a8a;
+}
+
+/* =========================================
+   8. POSTBOX / CARDS — سایه و border ملایم
+   ========================================= */
+.postbox {
+  background: #ffffff !important;
+  border: 1px solid #e8e2d8 !important;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  overflow: hidden;
+}
+
+.postbox-header {
+  border-bottom: 1px solid #e8e2d8;
+}
+
+.postbox-header h2,
+.postbox-header h3 {
+  color: #1f3a5f;
+  font-weight: 600;
+}
+
+/* Dashboard Widget */
+#dashboard-widgets .postbox {
+  border-radius: 12px;
+}
+
+/* =========================================
+   9. BUTTONS — فقط رنگ
+   ========================================= */
+body.wp-admin .button,
+body.wp-admin .button-secondary {
+  background: #ffffff !important;
+  border-color: #d7dce3 !important;
+  color: #1f3a5f !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+body.wp-admin .button:hover,
+body.wp-admin .button-secondary:hover,
+body.wp-admin .button:focus {
+  border-color: #a4834e !important;
+  color: #a4834e !important;
+  background: #faf8f4 !important;
+}
+
+body.wp-admin .button-primary,
+body.wp-admin input.button-primary,
+body.wp-admin .button-primary.focus,
+body.wp-admin .button-primary:focus {
+  background: #a4834e !important;
+  border-color: #a4834e !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+body.wp-admin .button-primary:hover,
+body.wp-admin input.button-primary:hover {
+  background: #94723f !important;
+  border-color: #94723f !important;
+  color: #ffffff !important;
+}
+
+/* دکمه حذف */
+body.wp-admin .submitdelete,
+body.wp-admin .button-link-delete {
+  color: #dc2626 !important;
+}
+
+body.wp-admin .submitdelete:hover,
+body.wp-admin .button-link-delete:hover {
+  background: rgba(239, 68, 68, 0.06) !important;
+  color: #b91c1c !important;
+}
+
+/* =========================================
+   10. FORM INPUTS — فقط border و focus
+   ========================================= */
+body.wp-admin input[type="text"],
+body.wp-admin input[type="password"],
+body.wp-admin input[type="email"],
+body.wp-admin input[type="number"],
+body.wp-admin input[type="tel"],
+body.wp-admin input[type="url"],
+body.wp-admin input[type="search"],
+body.wp-admin select,
+body.wp-admin textarea {
+  border-color: #d7dce3 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+body.wp-admin input[type="text"]:focus,
+body.wp-admin input[type="password"]:focus,
+body.wp-admin input[type="email"]:focus,
+body.wp-admin input[type="number"]:focus,
+body.wp-admin input[type="tel"]:focus,
+body.wp-admin input[type="url"]:focus,
+body.wp-admin input[type="search"]:focus,
+body.wp-admin select:focus,
+body.wp-admin textarea:focus {
+  border-color: #a4834e !important;
+  box-shadow: 0 0 0 2px rgba(164, 131, 78, 0.12) !important;
+}
+
+/* =========================================
+   11. TABLES — فقط border و hover
+   ========================================= */
+body.wp-admin table.widefat,
+body.wp-admin table.striped,
+body.wp-admin .wp-list-table {
+  background: #ffffff;
+  border-color: #e8e2d8 !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body.wp-admin table.widefat thead th,
+body.wp-admin table.striped thead th,
+body.wp-admin .wp-list-table thead th,
+body.wp-admin .wp-list-table tfoot th {
+  background: #f4f0ea;
+  border-color: #e8e2d8;
+  color: #1f3a5f;
+  font-weight: 600;
+}
+
+body.wp-admin table.striped > tbody > *:nth-child(odd) {
+  background-color: #fdfcfa;
+}
+
+body.wp-admin .wp-list-table tbody tr:hover {
+  background-color: rgba(164, 131, 78, 0.04);
+}
+
+/* =========================================
+   12. TABS — فقط رنگ
+   ========================================= */
+.nav-tab {
+  border-color: transparent;
+  color: #6b7280;
+  background: transparent;
+}
+
+.nav-tab:hover {
+  color: #a4834e;
+  background: rgba(164, 131, 78, 0.06);
+}
+
+.nav-tab-active {
+  border-color: #a4834e #a4834e transparent !important;
+  color: #a4834e;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.nav-tab-wrapper {
+  border-bottom-color: #a4834e;
+}
+
+/* =========================================
+   13. CUSTOM PANELS (Theme Pages)
+   ========================================= */
+
+/* --- Settings Page (Image Uploader) --- */
+.mytheme-panel {
+  max-width: 700px;
+}
+
+.mytheme-panel .image-uploader {
+  background: #ffffff;
+  padding: 24px;
+  border: 1px solid #e8e2d8;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.image-actions {
+  margin-bottom: 10px;
+}
+#upload-btn,
+#save-btn {
+  width: 100px !important;
+}
+.mytheme-panel .image-preview {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #d7dce3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #faf8f4;
+}
+
+.mytheme-panel .image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mytheme-panel .no-image {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* --- Consultation Types Page --- */
+.wrap .postbox {
+  border-radius: 12px;
+}
+
+/* --- Working Hours Page --- */
+/* جدول ساعات کاری از همون widefat استایل می‌گیرد */
+
+/* --- Bookings Panel --- */
+.lawyer-panel-wrap,
+.support-panel-wrap {
+  margin: 20px 20px 20px 0;
+}
+
+.lawyer-panel-header h1,
+.support-panel-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f3a5f;
+}
+
+.lawyer-table-wrap,
+.support-table-wrap {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.lawyer-table th,
+.support-table th {
+  background: #f4f0ea;
+  color: #1f3a5f;
+  font-weight: 600;
+  padding: 14px 16px;
+  text-align: right;
+  border-bottom: 1px solid #e8e2d8;
+  font-size: 13px;
+}
+
+.lawyer-table td,
+.support-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0ece4;
+  font-size: 13px;
+}
+
+.lawyer-table tr:last-child td,
+.support-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lawyer-table tr:hover,
+.support-table tr:hover {
+  background: rgba(164, 131, 78, 0.04);
+}
+
+/* Badges */
+.lawyer-badge,
+.support-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* --- Ticket Detail --- */
+.ticket-detail-wrap {
+  max-width: 900px;
+  margin: 20px 20px 20px 0;
+}
+
+.ticket-detail-header {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.ticket-detail-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #1f3a5f;
+}
+
+.ticket-meta {
+  display: flex;
+  gap: 20px;
+  color: #6b7280;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.ticket-conversation {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.conversation-item {
+  padding: 16px 18px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.conversation-item:last-child {
+  margin-bottom: 0;
+}
+
+.conversation-item.user-msg {
+  background: rgba(44, 90, 138, 0.05);
+  border: 1px solid rgba(44, 90, 138, 0.1);
+}
+
+.conversation-item.admin-msg {
+  background: #f4f0ea;
+  border: 1px solid #e8e2d8;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.conversation-header strong {
+  color: #1f3a5f;
+  font-size: 13px;
+}
+
+.conversation-body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #1f3a5f;
+}
+
+.admin-reply-box {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.admin-reply-box h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f3a5f;
+  margin-bottom: 14px;
+}
+
+.admin-reply-box textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  border: 1px solid #d7dce3;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.admin-reply-box textarea:focus {
+  border-color: #a4834e;
+  box-shadow: 0 0 0 2px rgba(164, 131, 78, 0.12);
+  outline: none;
+}
+
+.admin-reply-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* --- Bookings Edit Form --- */
+.lawyer-edit-wrap {
+  max-width: 800px;
+  margin: 20px 20px 20px 0;
+}
+
+.lawyer-edit-box {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.lawyer-edit-box h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #f0ece4;
+  padding-bottom: 14px;
+  font-size: 17px;
+  color: #1f3a5f;
+}
+
+.lawyer-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.lawyer-form-group {
+  margin-bottom: 0;
+}
+
+.lawyer-form-group.full {
+  grid-column: 1 / -1;
+}
+
+.lawyer-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #1f3a5f;
+}
+
+.lawyer-form-group input,
+.lawyer-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d7dce3;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.lawyer-form-group input:focus,
+.lawyer-form-group select:focus {
+  border-color: #a4834e;
+  box-shadow: 0 0 0 2px rgba(164, 131, 78, 0.12);
+  outline: none;
+}
+
+.lawyer-form-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+/* =========================================
+   14. LOGIN PAGE
+   ========================================= */
+body.login {
+  background: linear-gradient(135deg, #faf8f4 0%, #f4f0ea 100%);
+  font-family:
+    "IRANSans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Tahoma,
+    sans-serif;
+}
+
+body.login div#login {
+  width: 380px;
+}
+
+body.login div#login h1 a {
+  width: 100%;
+  background-size: contain;
+  height: 80px;
+}
+
+body.login form {
+  background: #ffffff;
+  border: 1px solid #e8e2d8;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  padding: 28px 28px 30px;
+}
+
+body.login form p label {
+  color: #1f3a5f;
+  font-weight: 500;
+}
+
+body.login form .input {
+  border-color: #d7dce3 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+body.login form .input:focus {
+  border-color: #a4834e !important;
+  box-shadow: 0 0 0 2px rgba(164, 131, 78, 0.12) !important;
+}
+
+body.login .button-primary {
+  width: 100%;
+  background: #a4834e !important;
+  border-color: #a4834e !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  font-size: 14px;
+}
+
+body.login .button-primary:hover {
+  background: #94723f !important;
+  border-color: #94723f !important;
+}
+
+body.login #backtoblog a,
+body.login #nav a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+body.login #backtoblog a:hover,
+body.login #nav a:hover {
+  color: #a4834e;
+}
+
+body.login .privacy-policy-page-link {
+  margin-top: 16px;
+}
+
+/* =========================================
+   15. RTL SAFETY
+   ========================================= */
+body.rtl .lawyer-table th,
+body.rtl .support-table th {
+  text-align: right;
+}
+
+/* =========================================
+   16. RESPONSIVE SAFETY
+   ========================================= */
+@media (max-width: 782px) {
+  .lawyer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lawyer-table,
+  .support-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .admin-reply-actions {
+    flex-direction: column;
+  }
+
+  .admin-reply-actions .button {
+    text-align: center;
+  }
+}
+
+.wrap .page-title-action {
+  border-radius: 6px !important;
+}
